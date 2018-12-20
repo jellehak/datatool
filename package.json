@@ -1,11 +1,12 @@
 {
   "name": "datatool",
   "version": "1.0.0",
+  "homepage":"https://jellehak.github.io/datatool/",
   "description": "",
   "main": "app.js",
   "scripts": {
     "start": "browser-sync --watch",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d ."
   },
   "keywords": [],
   "author": "Jelle",
