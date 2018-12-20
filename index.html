@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <style>
+        #holder.hover {
+            border: 10px dashed #0c0 !important;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.0.19/vuetify.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id='app'>
+        <v-app>
+            <v-content>
+                <v-container>
+                    <h1>Data Tool</h1>
+
+                    <form v-on:submit.prevent="submit">
+
+                        <input type="file">
+                        <span id="fileDragName"></span>
+                        <span id="fileDragSize"></span>
+                        <span id="fileDragType"></span>
+                        <span id="fileDragData"></span>
+                        <drop-zone v-on:change="change">{{files}}</drop-zone>
+
+                        <v-text-field multi-line v-model='code' label="Code"></v-text-field>
+
+                        <v-btn type='submit' color="primary">Run</v-btn>
+
+                        <v-layout row>
+                            <v-flex xs4>
+                                <v-subheader>Output</v-subheader>
+                            </v-flex>
+                            <v-flex xs8>
+
+                                <v-text-field multi-line :value='output | json' label="Output"></v-text-field>
+                            </v-flex>
+                        </v-layout>
+
+                        <v-btn v-on:click='exportCsv' color="primary">Export</v-btn>
+                        
+                    </form>
+                </v-container>
+            </v-content>
+        </v-app>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.min.js"></script>
+    <script src="//unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.0.19/vuetify.min.js"></script>
+    <script src='./components/dropZone.js'></script>
+    <script src='./helpers/exportCsv.js'></script>
+    <script src='app.js'></script>
+</body>
+
+</html>
