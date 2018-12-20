@@ -1,0 +1,13 @@
+{
+  "name": "datatool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "browser-sync --watch",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [],
+  "author": "Jelle",
+  "license": "ISC"
+}
